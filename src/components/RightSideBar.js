@@ -1,4 +1,4 @@
-import FishCard from "./FishCard";
+import FishCard from "../Pages/Fish";
 
 export default function RightSideBar({
   showList,
