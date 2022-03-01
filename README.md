@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+### 🐟  Animal Crossing New Horizon Fish Index 🐟 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Have you been struggling to find the fish you need? Do you keep forgetting what you've already donated to the museum? Look no further, this website is for you! 
 
-## Available Scripts
+This website is for avid players of Animal Crossing who need help with fishing. It provides all details of every fish in the game to enable you to become the best fishervillager you can be! It has some key functionalities that will allow you to keep track of your progress in the game. 
 
-In the project directory, you can run:
+ ### ✨Available Features✨
+ 
+ 🔎 Lets you search for any fish in the game.
+ 
+🧭 Discover the locations of the fish you're in need of.
 
-### `npm start`
+🎁 Keep track of what you've given to Blathers with the donation list. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🎣 Keep track of what you need to catch and have already caught. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🐠🦑 Compare two different types of fish at the same time.
 
-### `npm test`
+🛎 Tells you the price of fish for Tom Nook and CJ.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+☔ Tells you if any special weather conditions are necessary to find a fish.
 
-### `npm run build`
+🕗 Tells you what time of day the fish are available in both the Northern and Southern Hemispheres. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+💰 Tells you rarity of the fish. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🖼 Shows you what the fish look like.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📅 Tells you which months the fish are available in both the Northern and Southern Hemispheres. 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🌍 Website in Use 🌍 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Here the website showing all fish in the game:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![image](https://user-images.githubusercontent.com/96899068/156202796-e90c7aa4-f359-419e-8890-a1118ef054c1.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Here is an example of searching for a specific fish and all of the details it gives you:
 
-## Learn More
+![image](https://user-images.githubusercontent.com/96899068/156203059-9b5b9e98-3326-4fdb-a000-5fe84e1a8bab.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here is an example of the Compare Functionality:
+![image](https://user-images.githubusercontent.com/96899068/156203176-6a6c9f6e-67e5-48c1-a16d-0c7b37a7e019.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Here is an example of a the Catch List in use:
+![image](https://user-images.githubusercontent.com/96899068/156203434-5cc4c51a-33c3-4a65-9a7c-7197ca4933d9.png)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 🛠 How This Website Was Made 🛠
 
-### Analyzing the Bundle Size
+This website was made using the ACNH api: https://acnhapi.com/v1a/fish.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+It is also a REACT App: https://reactjs.org/ and styled using MUI: https://mui.com/. 
 
-### Making a Progressive Web App
+Testing was completed using Cypress: https://www.cypress.io/ and Jest: https://jestjs.io/. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
