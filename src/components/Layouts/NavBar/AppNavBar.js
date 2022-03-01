@@ -6,11 +6,14 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import SearchIcon from '@mui/icons-material/Search';
 import { blue } from '@mui/material/colors';
+
+import NavMenu from './Components/NavMenu';
+import SearchResult from '../../Modules/SearchResults';
 import { Link } from 'react-router-dom';
-import SearchResult from '../Modules/SearchResults';
+import { CardMedia } from '@mui/material';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -56,13 +59,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function AppNavBar(props) {
-  console.log("kdkdkdk ",props);
+ 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{backgroundColor:"black"}}>
+        <Toolbar sx={{backgroundColor:"black",color:'white'}}>
           <Typography variant="h3">
-              ACNH
+             <Link to='/' style={{textDecoration:'none',color:'white'}}> ACNH <img width={80} height={40} src={process.env.PUBLIC_URL + '/icon.png'}/></Link>
           </Typography>
           <Typography
             variant="h6"
@@ -83,15 +86,8 @@ export default function AppNavBar(props) {
             />
              
           </Search>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ ml: 2}}
-          >
-             <Link style={{color:'white'}} to='/'> <MenuIcon /></Link>
-          </IconButton>
+          <NavMenu/>
+          
         </Toolbar>
         {props.object.state.searchResult.length?<Box ><SearchResult  object={props.object}></SearchResult></Box>:<></> }
       </AppBar>

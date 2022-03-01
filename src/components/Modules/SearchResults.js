@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -18,7 +17,9 @@ export default function SearchResult(props) {
       
       (props.object.state.searchResult.map(ele=>(
         <ListItemButton key={ele.id}
-          onClick={(event) => {navigate(`/fish?id=${ele.id}`); props.object.handleClearSearchResult()}}
+          onClick={(event) => {
+            props.object.handleSelectedFish(ele);
+            navigate(`/fish?id=${ele.id}`); props.object.handleClearSearchResult()}}
         >
           <ListItemText primary={ele['file-name'].replace('_',' ')} />
         <ListItemIcon>

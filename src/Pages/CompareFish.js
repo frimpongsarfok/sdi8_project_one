@@ -1,9 +1,15 @@
 //http://localhost:3000/compare?fishA=1&fishB=2
 
 import React from "react";
-import {useLocation} from 'react-router-dom'
-import FishCard from "./Fish";
-
+import {useLocation} from 'react-router-dom';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea, List, ListItem,Grid,Divider,ListItemText, Container } from '@mui/material';
+import AppNavBar from "../components/Layouts/NavBar/AppNavBar";
+import AppFooter from "../components/Layouts/Footer/Components/AppFooter";
+import { Box } from "@mui/system";
 function useQuery() {
     const { search } = useLocation();
   
@@ -14,30 +20,64 @@ export default  function CompareFish(props){
     let fishBId=parseInt(useQuery().get('fishB'));
     let fishA=props.object.state.allFish.filter(ele=>ele.id===fishAId)[0];
     let fishB=props.object.state.allFish.filter(ele=>ele.id===fishBId)[0];
-
-    const Fish=(props)=>(
-    <article>
-              <h1>Name:<span>{props.fish['file-name']}</span></h1>
-            <h2> ID: <span> {props.fish.id}</span></h2>
-            <h2> Selling Price: </h2> 
-             <h3> Tom Nook's Cranny Shop: <span> {props.fish.price} </span> </h3>
-            <h3> CJ: <span> {props.fish['price-cj']} </span> </h3>
-            <h3> Location/Weather: <span> {props.fish.availability.location} </span> </h3>
-            <h3> Time of Day: <span> {props.fish.availability['time-array']} </span> </h3>
-            <h3> Shadow Size: <span> {props.fish.shadow} </span> </h3>
-            <h3>Rarity: <span> {props.fish.availability.rarity} </span> </h3>
-            <h3> Season: <span> {props.fish.availability['month-array-northern'], props.fish.availability['month-array-southern']} </span> </h3>   *
-            <h3> Image: <span> {props.fish.image_uri} </span> </h3>
-    </article>
+  const TmpFishCard=(props)=>(
+        <Card sx={{ maxWidth: 345 }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="100%"
+              image={props.fish.image_uri}
+              alt="green iguana"
+            />
+            <CardContent>
+              <List >
+                  <ListItem>
+                    <Typography gutterBottom variant="h4" component="div">
+                      {props.fish.name['name-USen']}
+                    </Typography>
+                  </ListItem>
+                  <Divider component="p" />
+                   <ListItemText primary={`Price CJ`} secondary={props.fish['price-cj']}/>
+                   <Divider component="p"  />
+                   <ListItemText primary={` Selling Price`} secondary= {props.fish.price} />
+                   <Divider component="p"  />
+                   <ListItemText primary={`Location`} secondary={props.fish.availability.location} />
+                    <Divider component="p" />
+                    <ListItemText primary={` Rarity`} secondary= {props.fish.availability.rarity} />
+                    <Divider component="p"  />
+                    <ListItemText primary={` Catch Phrase`} secondary= {props.fish['catch-phrase']} />
+                    <Divider component="p" />
+                    <ListItemText primary={` Musuem Phrase`} secondary= {props.fish['museum-phrase']} />
+                    
+               </List>
+            </CardContent>
+          </CardActionArea>
+        </Card>
     );
-
     console.log(fishA,fishB)
     return (
-    <section>
-        {fishA ?(<Fish fish={fishA}/>):<p>Fish A  is empty</p>};
-        {fishB ?(<Fish fish={fishB}/>):<p>Fish B is empty</p>};
-        
-    
+    <section style={{textAlign:'center'}}>
+       <header >
+            <AppNavBar object={props.object}></AppNavBar>
+            <Typography gutterBottom variant="h4" component="h1"  >
+                    Compare Fish 
+            </Typography> 
+            </header> 
+        <article>
+          <Container>
+                <Box>
+                  <Grid container spacing={2}>
+                        <Grid item md={6}>
+                            {fishA ?(<TmpFishCard fish={fishA}/>):<p>Fish A  is empty</p>}
+                        </Grid>
+                        <Grid item  md={6}>
+                            {fishB ?(<TmpFishCard fish={fishB}/>):<p>Fish B is empty</p>}
+                        </Grid>
+                  </Grid>
+                </Box>
+          </Container>
+        </article>
+        <AppFooter/>
     </section>);
   
 }

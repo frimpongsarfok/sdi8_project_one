@@ -28,7 +28,7 @@ export default function  Availability(props) {
     >
         <li>
         <Typography
-          sx={{ mt: 0.5, ml: 9, fontSize: 25}}
+          sx={{ mt: 0.5, ml: 9, fontSize: 15}}
           color="text.secondary"
           display="block"
           variant="caption"

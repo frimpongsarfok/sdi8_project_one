@@ -3,8 +3,8 @@ import React from "react";
 import { useNavigate } from "react-router";
 import MainSearch from "./Pages/MainSearch";
 import AllFish from "./Pages/AllFish";
-import Fish from "./Pages/Fish"
-import CompareFish from './Pages/CompareFish'
+import Fish from "./Pages/Fish";
+import CompareFish from './Pages/CompareFish';
 import CatchList from './Pages/CatchList';
 import CaughtList from './Pages/CaughtList';
 import DonateList from './Pages/DonateList';
@@ -14,7 +14,7 @@ class App extends React.Component{
     super();
     this.state={
       allFish:[],
-      compare:{fishAId:"",fishBId:""},
+      compare:{fishAId:null,fishBId:null},
       currentFish:{},
       searchResult:[],
       catchList:{data:[],selected:[]},
@@ -39,7 +39,7 @@ class App extends React.Component{
   }
 
   handleSearchChange=(value)=>{
-    console.log(this.state.allFish.filter(ele=>ele['file-name'].includes(value)));
+    
    if(value.length){
     if(parseInt(value)){
       this.setState({
@@ -56,25 +56,26 @@ class App extends React.Component{
       searchResult:[]
     });
    }   
-  console.log(this.state)
+  
     
 }
 handleAddToList=(to,value)=>{
+  this.handleSelectedFish(value);
   switch(to){
     case 'catch_list':{
-      const catchList=[...this.state.catchList];
-      catchList.data.push(value);
+      const catchList={...this.state.catchList};
+      catchList.data.includes(value)?false:catchList.data.push(value);
       this.setState({catchList:catchList});
     }break;
     case 'caught_list':{
-      const caughtList=[...this.state.caughtList];
-      caughtList.data.push(value);
-      this.setState({caughtList:caughtList})
+      const caughtList={...this.state.caughtList};
+      caughtList.data.includes(value)?false:caughtList.data.push(value);
+      this.setState({caughtList:caughtList});
     }break;
     case 'donate_list':{
-      const donateList=[...this.state.donateList];
-      donateList.data.push(value);
-      this.setState=({donateList:donateList});
+      const donateList={...this.state.donateList};
+      donateList.data.includes(value)?false:donateList.data.push(value);
+      this.setState({donateList:donateList});
 
     }break;
     default:{
@@ -82,20 +83,20 @@ handleAddToList=(to,value)=>{
     }
   }
 }
-handleDeletFromList=(from)=>{
+handleDeleteFromList=(from)=>{
   switch(from){
     case 'catch_list':{
-      const catchList=[...this.state.catchList];
+      const catchList={...this.state.catchList};
       catchList.data=catchList.data.filter(ele=>catchList.selected.includes(ele.id)===false); 
       this.setState({catchList:catchList});
     }break;
     case 'caught_list':{
-      const caughtList=[...this.caughtList];
+      const caughtList={...this.state.caughtList};
       caughtList.data=caughtList.data.filter(ele=>caughtList.selected.includes(ele.id)===false);
       this.setState({caughtList:caughtList});
     }break;
     case 'donate_list':{
-      const donateList=[...this.donateList];
+      const donateList={...this.state.donateList};
       donateList.data=donateList.data.filter(ele=>donateList.selected.includes(ele.id)===false);
       this.setState({donateList:donateList});
 
@@ -106,19 +107,21 @@ handleDeletFromList=(from)=>{
   }
 }
 handleSelectedList=(from,listArray)=>{
+  
+ 
   switch(from){
     case 'catch_list':{
-      const catchList=[...this.state.catchList];
+      const catchList={...this.state.catchList}; 
       catchList.selected=listArray; 
       this.setState({catchList:catchList});
     }break;
     case 'caught_list':{
-      const caughtList=[...this.caughtList];
+      const caughtList={...this.state.caughtList}; 
       caughtList.selected=listArray; 
       this.setState({caughtList:caughtList});
     }break;
     case 'donate_list':{
-      const donateList=[...this.donateList];
+      const donateList={...this.state.donateList}; 
       donateList.selected=listArray; 
       this.setState({donateList:donateList});
 
@@ -128,8 +131,18 @@ handleSelectedList=(from,listArray)=>{
     }
   }
 }
+handleSelectedFish=(fish)=>{
+  this.setState({currentFish:fish});
+}
 handleClearSearchResult=()=>{
   this.setState({searchResult:[]});
+}
+handleCompare=(value)=>{
+   let compare={...this.state.compare};
+   let Aid=compare.fishAId;
+   compare.fishAId=value;
+   compare.fishBId=Aid;
+   this.setState({compare:compare})
 }
   render=()=>{
 
@@ -139,11 +152,11 @@ handleClearSearchResult=()=>{
             <Route path='/allfish' element={<AllFish object={this}/>}></Route>
             <Route path='/search'  element={<MainSearch/>}></Route>
             <Route path='/'  element={<MainSearch object={this}  />}></Route>
-            <Route path='/fish' element={<Fish object={this} ></Fish>}></Route>
+            <Route path='/fish' element={<Fish  object={this} ></Fish>}></Route>
             <Route path='/compare' element={<CompareFish object={this}/>}></Route>
-            <Route path='/donateList' element={<DonateList object={this}/>}></Route>
-            <Route path='/caughtList' element={<CaughtList object={this}/>}></Route>
-            <Route path='/catchList' element={<CatchList object={this}/>}></Route>
+            <Route path='/donatelist' element={<DonateList object={this}/>}></Route>
+            <Route path='/caughtlist' element={<CaughtList object={this}/>}></Route>
+            <Route path='/catchlist' element={<CatchList object={this}/>}></Route>
 
         </Routes>
         
@@ -151,8 +164,9 @@ handleClearSearchResult=()=>{
   }
 }
 
-
-
+//move context to context.js folder
+const AppContext=React.createContext({currentFish:{}})
+App.contextType=AppContext;
 export default App;
 
 

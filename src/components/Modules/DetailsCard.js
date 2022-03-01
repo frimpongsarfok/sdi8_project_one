@@ -14,6 +14,7 @@ import { Box } from '@mui/system';
 import { right } from '@popperjs/core';
 
 export default function  DetailsCard(props) {
+    let navigate=props.object.state.navigation();
   return (
     <Box>
     <List
@@ -47,10 +48,12 @@ export default function  DetailsCard(props) {
 
             </Grid>
             <Grid item xs={6} md={6}>
-                <Box   >
-                   <Button variant="outlined" sx={{color:'inherit',backgroundColor:'inherit'}} >
-                                Compare
-                    </Button>
+                <Box>
+                   <Button variant="outlined" sx={{color:'inherit',backgroundColor:'inherit'}} onClick={(event)=>props.object.handleCompare(props.fish.id)}>Compare</Button>
+                   {props.object.state.compare.fishAId?
+                   (<Button variant="outlined" sx={{color:'inherit',backgroundColor:'inherit'}}
+                             onClick={()=>navigate(`/compare?fishA=${props.object.state.compare.fishAId}&fishB=${props.object.state.compare.fishBId}`)}>
+                                View Compare </Button>):<></>}
                 </Box>
 
             </Grid>
@@ -70,14 +73,15 @@ export default function  DetailsCard(props) {
       <ListItem>
          <Box sx={{display: 'flex','& > *': {m: 3}, }} >
              Add To :
-           <Button variant="outlined"  sx={{color:'inherit',backgroundColor:'inherit'}}>
+           <Button variant="outlined"  sx={{color:'inherit',backgroundColor:'inherit'}} onClick={(even)=>props.object.handleAddToList('catch_list',props.fish)}>
                 Catch List
             </Button>
-            <Button variant="outlined" sx={{color:'inherit',backgroundColor:'inherit'}} >
-                Donate List
-            </Button>
-            <Button variant="outlined"  sx={{color:'inherit',backgroundColor:'inherit'}}>
+            <Button variant="outlined" sx={{color:'inherit',backgroundColor:'inherit'}} onClick={(even)=>props.object.handleAddToList('caught_list',props.fish)}>
+                
                 Caught List
+            </Button>
+            <Button variant="outlined"  sx={{color:'inherit',backgroundColor:'inherit'}} onClick={(even)=>props.object.handleAddToList('donate_list',props.fish)}>
+                   Donate List
             </Button>
         </Box>
       </ListItem>
