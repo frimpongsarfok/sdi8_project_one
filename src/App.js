@@ -47,7 +47,7 @@ class App extends React.Component{
       });
     }else{
       this.setState({
-        searchResult:this.state.allFish.filter(ele=>ele['file-name'].includes(value))
+        searchResult:this.state.allFish.filter(ele=>ele['file-name'].includes(value.toLowerCase()))
       });
     }
    
