@@ -20,6 +20,7 @@ export default function FishCard(props) {
           image={props.fish.image_uri}
           sx={{height:props.height,width:props.width,margin:'auto'}}
           alt={props.fish['file-8name']}
+          onClick={(even)=>console.log('img clicked')}
         />
         <CardContent>
           <Typography gutterBottom variant="h6" component="p">

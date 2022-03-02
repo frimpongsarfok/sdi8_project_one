@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useParams,useLocation } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route,useLocation } from 'react-router-dom'; 
 import React from "react"; 
 import { useNavigate } from "react-router";
 import MainSearch from "./Pages/MainSearch";
@@ -64,18 +64,18 @@ handleAddToList=(to,value)=>{
   switch(to){
     case 'catch_list':{
       const catchList={...this.state.catchList};
-      catchList.data.includes(value)?false:catchList.data.push(value);
-      this.setState({catchList:catchList});
+     if(catchList.data.includes(value)?false:catchList.data.push(value))
+        this.setState({catchList:catchList});
     }break;
     case 'caught_list':{
       const caughtList={...this.state.caughtList};
-      caughtList.data.includes(value)?false:caughtList.data.push(value);
-      this.setState({caughtList:caughtList});
+      if(caughtList.data.includes(value)?false:caughtList.data.push(value))
+        this.setState({caughtList:caughtList});
     }break;
     case 'donate_list':{
       const donateList={...this.state.donateList};
-      donateList.data.includes(value)?false:donateList.data.push(value);
-      this.setState({donateList:donateList});
+      if(donateList.data.includes(value)?false:donateList.data.push(value))
+         this.setState({donateList:donateList});
 
     }break;
     default:{

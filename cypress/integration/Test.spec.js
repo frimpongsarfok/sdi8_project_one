@@ -20,7 +20,7 @@ describe("", () => {
   it("Search bar is fucntional", () => {
     // Role/Method to find search bar needs to be updated once parameters (Role/ID) have been assigned
     const searchTest = 'Rainbowfish';
-    cy.findByRole('button').click()
+    cy.findByPlaceholderText('Search...').click()
     cy.findByRole('textbox', {name: /Search Bar/i}).type(searchTest)
 
     return cy.findByRole('button').click()

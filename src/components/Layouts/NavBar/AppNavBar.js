@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 
 import SearchIcon from '@mui/icons-material/Search';
-import { blue } from '@mui/material/colors';
+
 
 import NavMenu from './Components/NavMenu';
 import SearchResult from '../../Modules/SearchResults';
 import { Link } from 'react-router-dom';
-import { CardMedia } from '@mui/material';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -65,7 +63,7 @@ export default function AppNavBar(props) {
       <AppBar position="static">
         <Toolbar sx={{backgroundColor:"black",color:'white'}}>
           <Typography variant="h3">
-             <Link to='/' style={{textDecoration:'none',color:'white'}}> ACNH <img width={80} height={40} src={process.env.PUBLIC_URL + '/icon.png'}/></Link>
+             <Link to='/' style={{textDecoration:'none',color:'white'}}> ACNH <img alt='icon' width={80} height={40} src={process.env.PUBLIC_URL + '/icon.png'}/></Link>
           </Typography>
           <Typography
             variant="h6"
