@@ -16,7 +16,7 @@ import { right } from '@popperjs/core';
 export default function  DetailsCard(props) {
     let navigate=props.object.state.navigation();
   return (
-    <Box>
+    
     <List
       sx={{
         width: '100%',
@@ -37,9 +37,9 @@ export default function  DetailsCard(props) {
         </Typography>
       
       <ListItem>
-       
+        
         <Grid container spacing={2}>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
             
                 <ListItemText primary={`ID #`} secondary={`${props.fish.id}`} />
                 <Divider component="p" variant="inset" />
@@ -47,7 +47,7 @@ export default function  DetailsCard(props) {
                 <Divider component="p" variant="inset" />
 
             </Grid>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
                 <Box>
                    <Button variant="outlined" sx={{color:'inherit',backgroundColor:'inherit'}} onClick={(event)=>props.object.handleCompare(props.fish.id)}>Compare</Button>
                    {props.object.state.compare.fishAId?
@@ -70,8 +70,8 @@ export default function  DetailsCard(props) {
       </ListItem>
       <Divider component="li" variant="inset" />
       <Divider/>
-      <ListItem>
-         <Box sx={{display: 'flex','& > *': {m: 3}, }} >
+      { <ListItem>
+         <Box sx={{display: 'flex','& > *': {ml: 1}, }} >
              Add To :
            <Button variant="outlined"  sx={{color:'inherit',backgroundColor:'inherit'}} onClick={(even)=>props.object.handleAddToList('catch_list',props.fish)}>
                 Catch List
@@ -84,10 +84,10 @@ export default function  DetailsCard(props) {
                    Donate List
             </Button>
         </Box>
-      </ListItem>
+      </ListItem> }
     </List>
    
    
-    </Box>
+   
   );
 }

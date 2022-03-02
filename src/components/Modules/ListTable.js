@@ -4,9 +4,9 @@ import { DataGrid } from '@mui/x-data-grid';
 
 export default function ListTable(props) {
     const columns = [
-      { field: 'id', headerName: 'ID', width: 20 },
-      { field: 'name', headerName: 'Name', width: 130 },
-      { field: 'catch-phrase', headerName: 'Catch Phrase', width: 550 },
+      { field: 'id', headerName: 'ID', width: 10 },
+      { field: 'name', headerName: 'Name', width: 90 },
+      { field: 'catch-phrase', headerName: 'Catch Phrase', width: 350 },
     ];
     
     let rows =[];
@@ -28,9 +28,9 @@ export default function ListTable(props) {
     
    
       return (
-        <article style={{ height: '55vh', width: '100%' }}>
+        <article style={{ height: 'auto', width: '100%',textAlign:'center'}}>
            
-          <DataGrid
+          <DataGrid style={{ height: '55vh', width: '95%',textAlign:'center', overflow:'auto'}}
             rows={rows}
             columns={columns}
             pageSize={5}

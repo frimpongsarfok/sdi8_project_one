@@ -26,7 +26,7 @@ function AllFish(props){
                         {
                         props.object.state.allFish.map(ele=> 
                         
-                        <Grid key={ele.id} item xs={2} 
+                        <Grid key={ele.id} item xs={12} md={4} lg={2} 
                           onClick={()=>{
                             props.object.handleSelectedFish(ele);
                             navigate(`/fish?id=${ele.id}`);

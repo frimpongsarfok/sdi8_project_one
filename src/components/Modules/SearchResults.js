@@ -10,7 +10,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 export default function SearchResult(props) {
     let navigate=useNavigate()
   return (
-    <Box sx={{width: "auto", maxHeight: '50vh', overflow: 'auto', bgcolor: "background.paper",textAlign:'center'}}>
+    <Box sx={{width: "100%", maxHeight: '50vh', overflow: 'auto', bgcolor: "background.paper",textAlign:'center'}}>
       <List component="nav" aria-label="main mailbox folders" sx={{color:'black'}}>
         
       {props.object.state.searchResult.length?

@@ -67,10 +67,10 @@ export default  function CompareFish(props){
           <Container>
                 <Box>
                   <Grid container spacing={2}>
-                        <Grid item md={6}>
+                        <Grid item xs={12} md={6}>
                             {fishA ?(<TmpFishCard fish={fishA}/>):<p>Fish A  is empty</p>}
                         </Grid>
-                        <Grid item  md={6}>
+                        <Grid item xs={12} md={6}>
                             {fishB ?(<TmpFishCard fish={fishB}/>):<p>Fish B is empty</p>}
                         </Grid>
                   </Grid>

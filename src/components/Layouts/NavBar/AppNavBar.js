@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-
+import { Grid } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 
@@ -59,19 +59,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function AppNavBar(props) {
  
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 4 }}>
       <AppBar position="static">
+      
         <Toolbar sx={{backgroundColor:"black",color:'white'}}>
-          <Typography variant="h3">
-             <Link to='/' style={{textDecoration:'none',color:'white'}}> ACNH <img alt='icon' width={80} height={40} src={process.env.PUBLIC_URL + '/icon.png'}/></Link>
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-          </Typography>
+        <Grid container spacing={2}>
+            <Grid item xs={12} md={3} >
+            <Typography variant="h3">
+              <Link to='/' style={{textDecoration:'none',color:'white'}}> ACFI <img alt='icon' width={80} height={40} src={process.env.PUBLIC_URL + '/icon.png'}/></Link>
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={7} >
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -83,10 +81,14 @@ export default function AppNavBar(props) {
              
             />
              
-          </Search>
-          <NavMenu/>
-          
+            </Search>
+            </Grid>
+            <Grid item xs={12} md={2} >
+            <NavMenu/>
+           </Grid>
+          </Grid>
         </Toolbar>
+        
         {props.object.state.searchResult.length?<Box ><SearchResult  object={props.object}></SearchResult></Box>:<></> }
       </AppBar>
     </Box>
