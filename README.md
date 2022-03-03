@@ -33,17 +33,18 @@ This website is for avid players of Animal Crossing who need help with fishing. 
 
 Here the website showing all fish in the game:
 
-![image](https://user-images.githubusercontent.com/96899068/156202796-e90c7aa4-f359-419e-8890-a1118ef054c1.png)
+![Screen Shot 2022-03-03 at 8 17 00 AM](https://user-images.githubusercontent.com/23236161/156573116-b94e795f-19f6-45be-89e3-cd466b3351af.png)
 
 Here is an example of searching for a specific fish and all of the details it gives you:
 
-![image](https://user-images.githubusercontent.com/96899068/156203059-9b5b9e98-3326-4fdb-a000-5fe84e1a8bab.png)
+![Screen Shot 2022-03-03 at 8 18 28 AM](https://user-images.githubusercontent.com/23236161/156573296-05457606-5efa-4fcd-98c1-aadcc9045aee.png)
 
 Here is an example of the Compare Functionality:
-![image](https://user-images.githubusercontent.com/96899068/156203176-6a6c9f6e-67e5-48c1-a16d-0c7b37a7e019.png)
+![Screen Shot 2022-03-03 at 8 19 16 AM](https://user-images.githubusercontent.com/23236161/156573547-9e718d3a-c783-4685-9eed-694e5cdbb95e.png)
+
 
 Here is an example of a the Catch List in use:
-![image](https://user-images.githubusercontent.com/96899068/156203434-5cc4c51a-33c3-4a65-9a7c-7197ca4933d9.png)
+![Screen Shot 2022-03-03 at 8 20 13 AM](https://user-images.githubusercontent.com/23236161/156573618-b609296c-746e-4d8b-b316-29c460151452.png)
 
 
 ### 🛠 How This Website Was Made 🛠
@@ -54,5 +55,7 @@ It is also a REACT App: https://reactjs.org/ and styled using MUI: https://mui.c
 
 Testing was completed using Cypress: https://www.cypress.io/ and Jest: https://jestjs.io/. 
 
+
+RUN 'npm install && npm start![Screen Shot 2022-03-03 at 8 17 00 AM](https://user-images.githubusercontent.com/23236161/156572991-61a8d58d-b157-46de-baa7-fa0331816d1a.png)
 
 
