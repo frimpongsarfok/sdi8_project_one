@@ -19,7 +19,7 @@ export default function FishCard(props) {
         <CardMedia 
           component="img"
           image={props.fish.image_uri}
-          sx={{height:props.height,width:props.width,margin:'auto'}}
+          sx={{height:props.height,width:props.width,margin:'auto',padding:'auto'}}
           alt={props.fish['file-8name']}
          
         />

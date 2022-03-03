@@ -20,11 +20,11 @@ class App extends React.Component{
       catchList:{data:[],selected:[]},
       donateList:{data:[],selected:[]},
       caughtList:{data:[],selected:[]},
-      navigation:()=>{
-       let navigate= useNavigate()
-        return navigate;
+      Navigation:function(){
+       let nav= useNavigate()
+        return nav;
       },
-      getQuery:(key)=>{
+      GetQuery:(key)=>{
         const { search } = useLocation();
         return React.useMemo(() => new URLSearchParams(search), [search]).get(key);
       }

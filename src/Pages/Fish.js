@@ -11,7 +11,7 @@ import { Divider } from "@mui/material";
 import DetailsCard from "../components/Modules/DetailsCard";
 import AppFooter from "../components/Layouts/Footer/Components/AppFooter";
 function Fish(props){
-    let key=parseInt(props.object.state.getQuery('id'));
+    let key=parseInt(props.object.state.GetQuery('id'));
     let fish=props.object.state.allFish.filter(ele=>ele.id===key)[0];
     return (
         <section>

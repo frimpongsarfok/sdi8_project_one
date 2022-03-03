@@ -14,7 +14,7 @@ import { Box } from '@mui/system';
 import { right } from '@popperjs/core';
 
 export default function  DetailsCard(props) {
-    let navigate=props.object.state.navigation();
+    let navigate=props.object.state.Navigation();
   return (
     
     <List

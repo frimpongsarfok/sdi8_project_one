@@ -10,14 +10,10 @@ import { CardActionArea, List, ListItem,Grid,Divider,ListItemText, Container } f
 import AppNavBar from "../components/Layouts/NavBar/AppNavBar";
 import AppFooter from "../components/Layouts/Footer/Components/AppFooter";
 import { Box } from "@mui/system";
-function useQuery() {
-    const { search } = useLocation();
-  
-    return React.useMemo(() => new URLSearchParams(search), [search]);
-  }
+
 export default  function CompareFish(props){
-    let fishAId=parseInt(useQuery().get('fishA'));
-    let fishBId=parseInt(useQuery().get('fishB'));
+    let fishAId=parseInt(props.object.state.GetQuery('fishA'));
+    let fishBId=parseInt(props.object.state.GetQuery('fishB'));
     let fishA=props.object.state.allFish.filter(ele=>ele.id===fishAId)[0];
     let fishB=props.object.state.allFish.filter(ele=>ele.id===fishBId)[0];
   const TmpFishCard=(props)=>(

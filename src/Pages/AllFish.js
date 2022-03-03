@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import AppFooter from "../components/Layouts/Footer/Components/AppFooter";
 function AllFish(props){
    
-    let navigate=useNavigate();
+    let navigate=props.object.state.Navigation();
     return(
         <section>
             <header style={{textAlign:'center'}}>
@@ -31,7 +31,7 @@ function AllFish(props){
                             props.object.handleSelectedFish(ele);
                             navigate(`/fish?id=${ele.id}`);
                             }} > 
-                          <FishCard fish={ele}   width={'100%'} height='100%'/>
+                          <FishCard fish={ele}   />
                         </Grid>)
                         }
                       
