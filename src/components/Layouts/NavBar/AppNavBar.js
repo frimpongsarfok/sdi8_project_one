@@ -62,7 +62,7 @@ export default function AppNavBar(props) {
     <Box sx={{ flexGrow: 4 }}>
       <AppBar position="static">
       
-        <Toolbar sx={{backgroundColor:"black",color:'white'}}>
+        <Toolbar sx={{backgroundColor:"black",color:'white',width:'100vw'}}>
         <Grid container spacing={2}>
             <Grid item xs={12} md={3} >
             <Typography variant="h3">
