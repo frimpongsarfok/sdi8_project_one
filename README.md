@@ -1,4 +1,4 @@
-### 🐟  Animal Crossing New Horizon Fish Index 🐟 
+### 🐟  Animal Crossing Horizon Fish Index 🐟 
 
 https://animal-crossing-fishing-index.herokuapp.com
 
