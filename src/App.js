@@ -34,7 +34,7 @@ class App extends React.Component{
   componentDidMount=()=>{
    
     try {
-      fetch('http://localhost:4000/fish')
+      fetch('https://acfi-api-774ded02a86b.herokuapp.com/fish')
       .then(resp=>resp.json())
       .then(json=>this.setState({allFish:json}));
     } catch (error) {
