@@ -33,9 +33,14 @@ class App extends React.Component{
    
   componentDidMount=()=>{
    
-    fetch('https://acnhapi.com/v1a/fish')
-    .then(resp=>resp.json())
-    .then(json=>this.setState({allFish:json}));
+    try {
+      fetch('http://localhost:4000/fish')
+      .then(resp=>resp.json())
+      .then(json=>this.setState({allFish:json}));
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
   handleSearchChange=(value)=>{

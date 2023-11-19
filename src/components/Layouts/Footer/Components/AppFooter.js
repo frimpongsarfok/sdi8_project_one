@@ -9,7 +9,7 @@ function AppFooter(){
                 <h3>@Galvanize SDI 8# </h3>
                 <h4> <span role="img">🧑🏾‍💻 </span>Avengers Group <span role="img">🔥🔥🔥</span></h4>
             
-                        <Typography><span>Sarfo Kantanka Frimpong | </span> <span>Joshlyn Jamerson |</span>  <span> | Micheal Bloom </span> </Typography>
+                       
                         
                        
                 

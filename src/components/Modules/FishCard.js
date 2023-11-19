@@ -12,7 +12,7 @@ import { render } from '@testing-library/react';
 
 
 export default function FishCard(props) {
- 
+  console.log(props)
   return (
     <Card sx={{height:'100%',width:'100%'}}>
       <CardActionArea>
