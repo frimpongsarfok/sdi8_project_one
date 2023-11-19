@@ -2,7 +2,7 @@
   "homepage": "https://frimpongsarfok.github.io/sdi8_project_one",
   "name": "animal_crossing_project_1",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
