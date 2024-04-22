@@ -34,7 +34,7 @@ class App extends React.Component{
   componentDidMount=()=>{
    
     try {
-      fetch('https://acfi-api-774ded02a86b.herokuapp.com/fish')
+      fetch('https://acfi-api-774ded02a86b.herokuapp.com/fish',{ mode: 'no-cors' })
       .then(resp=>resp.json())
       .then(json=>this.setState({allFish:json}));
     } catch (error) {
