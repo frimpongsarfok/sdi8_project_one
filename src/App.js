@@ -33,7 +33,7 @@ class App extends React.Component{
    
   componentDidMount=()=>{
    
-    fetch('https://acnhapi.com/v1a/fish')
+    fetch('https://acfi-api-774ded02a86b.herokuapp.com/fish')
     .then(resp=>resp.json())
     .then(json=>this.setState({allFish:json}));
   }
