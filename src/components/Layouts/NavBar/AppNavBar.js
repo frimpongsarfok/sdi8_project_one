@@ -78,7 +78,7 @@ export default function AppNavBar(props) {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
               onChange={(event)=>{props.object.handleSearchChange(event.target.value)}}
-             
+              onBlur={()=>{props.object.handleClearSearchResult()}}
             />
              
             </Search>
