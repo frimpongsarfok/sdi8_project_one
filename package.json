@@ -1,5 +1,4 @@
 {
-  "homepage": "https://frimpongsarfok.github.io/sdi8_project_one",
   "name": "animal_crossing_project_1",
   "version": "0.1.0",
   "private": true,
@@ -11,7 +10,7 @@
     "@mui/x-data-grid": "^5.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^3.0.1",
     "svgo": "^2.8.0",
     "web-vitals": "^2.1.4"
   },
@@ -23,7 +22,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  
   },
   "eslintConfig": {
     "extends": [
@@ -51,9 +49,7 @@
     "@mui/x-data-grid-generator": "^5.5.1",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
-    "babel-loader": "^9.1.3",
-    "gh-pages": "^6.1.0",
     "material-ui-popup-state": "^2.0.0",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.22.3"
   }
 }
