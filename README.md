@@ -51,7 +51,7 @@ Here is an example of a the Catch List in use:
 
 ### 🛠 How This Website Was Made 🛠
 
-This website was made using the ACNH api: https://acnhapi.com/v1a/fish.
+This website was made using the ACNH api: https://github.com/frimpongsarfok/sdi8_project_two
 
 It is also a REACT App: https://reactjs.org/ and styled using MUI: https://mui.com/. 
 
