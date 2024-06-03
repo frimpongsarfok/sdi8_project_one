@@ -1,6 +1,6 @@
 ### 🐟  Animal Crossing Horizon Fish Index 🐟 
 
-https://animal-crossing-fishing-index.herokuapp.com
+https://acfi.sbcodeproject.com/
 
 Have you been struggling to find the fish you need? Do you keep forgetting what you've already donated to the museum? Look no further, this website is for you! 
 
